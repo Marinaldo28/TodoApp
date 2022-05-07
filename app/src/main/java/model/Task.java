@@ -5,7 +5,7 @@ import java.util.Date;
 public class Task {
 
     private int id;
-    private Product idProduct;
+    private Project idProduct;
     private String name;
     private String description;
     private Boolean completed;
@@ -17,7 +17,7 @@ public class Task {
     public Task() {
     }
 
-    public Task(int id, Product idProduct, String name, String description, Boolean completed, String notes, Date deadline, Date createdAt, Date updatedAt) {
+    public Task(int id, Project idProduct, String name, String description, Boolean completed, String notes, Date deadline, Date createdAt, Date updatedAt) {
         this.id = id;
         this.idProduct = idProduct;
         this.name = name;
@@ -37,11 +37,11 @@ public class Task {
         this.id = id;
     }
 
-    public Product getIdProduct() {
+    public Project getIdProduct() {
         return idProduct;
     }
 
-    public void setIdProduct(Product idProduct) {
+    public void setIdProduct(Project idProduct) {
         this.idProduct = idProduct;
     }
 

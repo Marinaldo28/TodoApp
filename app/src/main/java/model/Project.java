@@ -3,7 +3,7 @@ package model;
 
 import java.util.Date;
 
-public class Product {
+public class Project {
     
     private int id;
     private String name;
@@ -11,10 +11,10 @@ public class Product {
     private Date createdAt;
     private Date updatedAt;
 
-    public Product() {
+    public Project() {
     }
 
-    public Product(int id, String name, String description, Date createdAt, Date updatedAt) {
+    public Project(int id, String name, String description, Date createdAt, Date updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -80,7 +80,7 @@ public class Product {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Product other = (Product) obj;
+        final Project other = (Project) obj;
         return this.id == other.id;
     }
 
