@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Task {
 
-    private int id;
-    private Project idProduct;
+    private Integer id;
+    private Integer idProject;
     private String name;
     private String description;
     private Boolean completed;
@@ -13,13 +13,14 @@ public class Task {
     private Date deadline;
     private Date createdAt;
     private Date updatedAt;
-
+    
     public Task() {
+        this.createdAt = new Date();
     }
 
-    public Task(int id, Project idProduct, String name, String description, Boolean completed, String notes, Date deadline, Date createdAt, Date updatedAt) {
+    public Task(int id, int idProject, String name, String description, Boolean completed, String notes, Date deadline, Date createdAt, Date updatedAt) {
         this.id = id;
-        this.idProduct = idProduct;
+        this.idProject = idProject;
         this.name = name;
         this.description = description;
         this.completed = completed;
@@ -37,12 +38,12 @@ public class Task {
         this.id = id;
     }
 
-    public Project getIdProduct() {
-        return idProduct;
+    public Integer getIdProject() {
+        return idProject;
     }
 
-    public void setIdProduct(Project idProduct) {
-        this.idProduct = idProduct;
+    public void setIdProject(Integer idProject) {
+        this.idProject = idProject;
     }
 
     public String getName() {
@@ -125,7 +126,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Tasks{" + "id=" + id + ", idProduct=" + idProduct + ", name=" + name + ", description=" + description + ", completed=" + completed + ", notes=" + notes + ", deadline=" + deadline + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
+        return "Tasks{" + "id=" + id + ", idProduct=" + idProject + ", name=" + name + ", description=" + description + ", completed=" + completed + ", notes=" + notes + ", deadline=" + deadline + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
 
 }

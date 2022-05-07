@@ -3,6 +3,8 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class ConnectionFactory {
     
@@ -20,10 +22,32 @@ public class ConnectionFactory {
         }
     }
     
-    public static void closeConnection(Connection connection){
+    public static void closeConnection(Connection connection, PreparedStatement ps){
         try{
             if(connection != null){
                 connection.close();
+            }
+            
+            if(ps != null){
+                ps.close();
+            }
+        } catch (Exception e){
+            throw new RuntimeException("Erro ao fechar a conexão com o banco de dados", e);
+        }
+    }
+    
+    public static void closeConnection(Connection connection, PreparedStatement ps, ResultSet rs){
+        try{
+            if(connection != null){
+                connection.close();
+            }
+            
+            if(ps != null){
+                ps.close();
+            }
+            
+            if(rs != null){
+                rs.close();
             }
         } catch (Exception e){
             throw new RuntimeException("Erro ao fechar a conexão com o banco de dados", e);
